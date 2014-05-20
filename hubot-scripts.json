@@ -1,1 +1,1 @@
-["redis-brain.coffee", "shipit.coffee", "github-pull-request-notifier.coffee"]
+["shipit.coffee", "github-pull-request-notifier.coffee"]
