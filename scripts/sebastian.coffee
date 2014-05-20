@@ -1,4 +1,5 @@
 cronJob = require('cron').CronJob
+exec = require('child_process').exec
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
@@ -7,7 +8,9 @@ module.exports = (robot) ->
   ).start()
 
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
-    robot.send {room: '#general'}, 'お昼です'
+    exec('curl -s http://damp-meadow-3338.herokuapp.com/', (err, stdout, stderr) ->
+      robot.send {room: '#general'}, "お昼です。今日は#{stdout}です。"
+    )
   ).start()
 
   new cronJob('0 15 10 * * 1,2,3,4,5', () ->
