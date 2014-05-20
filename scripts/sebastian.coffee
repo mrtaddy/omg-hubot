@@ -9,7 +9,8 @@ module.exports = (robot) ->
 
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
     exec('curl -s http://damp-meadow-3338.herokuapp.com/', (err, stdout, stderr) ->
-      robot.send {room: '#general'}, "お昼です。今日は#{stdout}です。"
+      unless err
+        robot.send {room: '#general'}, "お昼です。今日は#{stdout}です。"
     )
   ).start()
 
