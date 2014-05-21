@@ -1,7 +1,6 @@
 [
   "shipit.coffee",
   "jenkins-notifier.coffee",
-  "pivotal.coffee",
   "newrelic.coffee",
   "travis.coffee",
   "ruby.coffee",
