@@ -21,8 +21,7 @@ _ = require('underscore')
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
-  #new cronJob('0 0 */1 * * *', () ->
-  new cronJob('*/5 * * * * *', () ->
+  new cronJob('0 0 */1 * * *', () ->
     if process.env.HUBOT_HPING_URLS
       urls = process.env.HUBOT_HPING_URLS.split(/,/)
     else
