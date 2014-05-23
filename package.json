@@ -34,6 +34,7 @@
     "jsdom": ">= 0.10.5",
     "underscore": ">= 1.6.0",
     "moment": ">= 1.7.0",
+    "hubot-thecat": ">= 1.0.1",
     "aws2js": ">= 0.8.2"
   },
 
