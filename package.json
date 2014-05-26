@@ -2,44 +2,40 @@
   "name": "hosted-hubot",
   "version": "2.7.1",
   "private": true,
-
   "author": "GitHub Inc.",
-
   "keywords": [
     "github",
     "hubot",
     "campfire",
     "bot"
   ],
-
   "description": "A simple helpful robot for your Company",
-
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/github/hubot/raw/master/LICENSE"
-  }],
-
-  "repository" : {
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/github/hubot/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
     "type": "git",
     "url": "https://github.com/github/hubot.git"
   },
-
   "dependencies": {
-    "hubot":         ">= 2.6.0 < 3.0.0",
+    "aws2js": ">= 0.8.2",
+    "cron ": ">= 0.8.0",
+    "gitio": ">= 1.0.1",
+    "hubot": ">= 2.6.0 < 3.0.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-slack ": ">= 2.1.0",
-    "cron ": ">= 0.8.0",
-    "xml2js": ">= 0.4.3",
-    "gitio": ">= 1.0.1",
-    "jsdom": ">= 0.10.5",
-    "underscore": ">= 1.6.0",
-    "moment": ">= 1.7.0",
+    "hubot-tantanmen": "^0.1.1",
     "hubot-thecat": ">= 1.0.1",
-    "aws2js": ">= 0.8.2"
+    "jsdom": ">= 0.10.5",
+    "moment": ">= 1.7.0",
+    "underscore": ">= 1.6.0",
+    "xml2js": ">= 0.4.3"
   },
-
   "engines": {
     "node": ">= 0.8.x",
-    "npm":  ">= 1.1.x"
+    "npm": ">= 1.1.x"
   }
 }
