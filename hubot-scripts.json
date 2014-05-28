@@ -6,5 +6,6 @@
   "ruby.coffee",
   "airbrake.coffee",
   "aws.coffee",
-  "bang-bang.coffee"
+  "bang-bang.coffee",
+  "http-say.coffee"
  ]
