@@ -33,6 +33,7 @@
     "jsdom": ">= 0.10.5",
     "moment": ">= 1.7.0",
     "underscore": ">= 1.6.0",
+    "hubot-sushiyuki": "0.0.2",
     "xml2js": ">= 0.4.3"
   },
   "engines": {
