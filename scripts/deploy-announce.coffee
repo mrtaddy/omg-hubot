@@ -3,7 +3,7 @@
 
 
 module.exports = (robot) ->
-  engineers = process.env.ENGINEERS.split(/,/)
+  engineers = process.env.ENGINEERS
   robot.hear /(.*デプロイ.*)/i, (msg) ->
-    message = engineers.join(' ') + "\n" + msg.match[1]
+    message = engineers.split(/,/).join(' ') + "\n" + msg.match[1]
     msg.send message
