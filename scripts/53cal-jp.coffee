@@ -27,10 +27,10 @@ scraper = gomiCalJp({ city: city, area: area })
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
-  new cronJob('0 50 19 * * *', () ->
+  new cronJob('0 31 18 * * *', () ->
     day = moment().add('days', 1)
     dayString = day.format('YYYY-MM-DD')
     scraper.whatDate dayString, (err, data) ->
       gomi = if data.result[dayString] then data.result[dayString] + 'です。' else 'ゴミの収集がありません。'
-      robot.send {room: '#general'}, day.format('YYYY-MM-DD dddd') + ' ' + 'の[' + data.meta.areaName + ']は' + gomi
+      robot.send {room: '#general'}, '明日 ' + day.format('YYYY-MM-DD dddd') + ' ' + 'の[' + data.meta.areaName + ']は' + gomi
   ).start()
