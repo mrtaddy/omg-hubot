@@ -21,6 +21,7 @@
     "url": "https://github.com/github/hubot.git"
   },
   "dependencies": {
+    "53cal-jp-scraper": "^0.1.0",
     "aws2js": ">= 0.8.2",
     "cron ": ">= 0.8.0",
     "gitio": ">= 1.0.1",
@@ -33,7 +34,7 @@
     "hubot-tantanmen": "^0.1.1",
     "hubot-thecat": ">= 1.0.1",
     "jsdom": ">= 0.10.5",
-    "moment": ">= 1.7.0",
+    "moment": "^2.6.0",
     "underscore": ">= 1.6.0",
     "xml2js": ">= 0.4.3"
   },
