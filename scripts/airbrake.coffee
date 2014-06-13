@@ -25,6 +25,9 @@ class MessageBuilder
   error_message: ->
     @json["error"]["error_message"]
 
+  error_class: ->
+    @json["error"]["error_class"]
+
   file: ->
     @json["error"]["file"]
 
@@ -38,7 +41,7 @@ class MessageBuilder
     @json["error"]["last_occurred_at"]
 
   text: ->
-    "Alert from #{this.project_name()} [#{this.last_occurred_at()}]\n#{this.request_url()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}"
+    "[#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}\n#{this.request_url()}\n#{this.last_occurred_at()}"
 
 querystring = require('querystring')
 
