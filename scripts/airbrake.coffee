@@ -40,9 +40,16 @@ class MessageBuilder
   text: ->
     "Alert from #{this.project_name()} [#{this.last_occurred_at()}]\n#{this.request_url()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}"
 
+querystring = require('querystring')
 
 module.exports = (robot) ->
   robot.router.post "/hubot/airbrake", (req, res) ->
+    query = querystring.parse(req._parsedUrl.query)
+
+    user = {}
+    user.room = query.room if query.room
+    user.type = query.type if query.type
+
     message = new MessageBuilder(req.body)
-    robot.send {room: process.env.HOBOT_AIRBRAKE_ROOM}, message.text()
+    robot.send user, message.text()
     res.end ""
