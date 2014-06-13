@@ -34,14 +34,15 @@ class MessageBuilder
   line_number: ->
     @json["error"]["line_number"]
 
-  request_url: ->
-    @json["error"]["last_notice"]["request_url"]
+  url: ->
+    "https://#{process.env.HUBOT_AIRBRAK_SUBDOMAIN}.aribrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
 
   last_occurred_at: ->
     @json["error"]["last_occurred_at"]
 
   text: ->
-    "[#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}\n#{this.request_url()}\n#{this.last_occurred_at()}"
+    "[#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}\n#{this.url()}\n#{this.last_occurred_at()}"
+
 
 querystring = require('querystring')
 
