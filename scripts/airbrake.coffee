@@ -35,7 +35,7 @@ class MessageBuilder
     @json["error"]["line_number"]
 
   url: ->
-    "https://#{process.env.HUBOT_AIRBRAKE_SUBDOMAIN}.aribrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
+    "https://#{process.env.HUBOT_AIRBRAKE_SUBDOMAIN}.airbrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
 
   last_occurred_at: ->
     @json["error"]["last_occurred_at"]
