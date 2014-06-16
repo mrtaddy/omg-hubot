@@ -19,6 +19,21 @@
 class MessageBuilder
   constructor: (@json) ->
 
+  sendable: ->
+    switch this.error_message()
+      when 'ReferenceError: omg is not defined'
+        false
+      when 'ReferenceError: Can\'t find variable: omg'
+        false
+      when 'Uncaught ReferenceError: omg is not defined'
+        false
+      when 'ReferenceError: Can\'t find variable: $'
+        false
+      when 'Uncaught ReferenceError: $ is not defined'
+        false
+      else
+        true
+
   project_name: ->
     @json["error"]["project"]["name"]
 
@@ -55,5 +70,5 @@ module.exports = (robot) ->
     user.type = query.type if query.type
 
     message = new MessageBuilder(req.body)
-    robot.send user, message.text()
+    robot.send user, message.text() if message.sendable()
     res.end ""
