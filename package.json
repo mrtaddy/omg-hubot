@@ -27,6 +27,7 @@
     "hubot": ">= 2.6.0 < 3.0.0",
     "hubot-53cal-jp": "^0.2.0",
     "hubot-google-transliterate": "^0.1.0",
+    "hubot-hotpepper": "^0.1.4",
     "hubot-phonetic-alphabet": "^0.1.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-slack ": ">= 2.1.0",
