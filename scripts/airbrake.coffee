@@ -20,16 +20,18 @@ class MessageBuilder
   constructor: (@json) ->
 
   sendable: ->
-    switch this.error_message()
-      when 'ReferenceError: omg is not defined'
+    switch true
+      when /ReferenceError: omg is not defined/.test(this.error_message())
         false
-      when 'ReferenceError: Can\'t find variable: omg'
+      when /ReferenceError: Can't find variable: omg/.test(this.error_message())
         false
-      when 'Uncaught ReferenceError: omg is not defined'
+      when /Uncaught ReferenceError: omg is not defined/.test(this.error_message())
         false
-      when 'ReferenceError: Can\'t find variable: $'
+      when /ReferenceError: Can't find variable: \$/.test(this.error_message())
         false
-      when 'Uncaught ReferenceError: $ is not defined'
+      when /Uncaught ReferenceError: \$ is not defined/.test(this.error_message())
+        false
+      when /http:\/\/www.noc.west.ntt.co.jp\/deny_url.html/.test(this.file())
         false
       else
         true
