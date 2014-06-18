@@ -34,6 +34,7 @@
     "hubot-sushiyuki": "0.0.8",
     "hubot-tantanmen": "^0.1.1",
     "hubot-thecat": ">= 1.0.1",
+    "hubot-weather-ja": "0.0.1",
     "jsdom": ">= 0.10.5",
     "moment": ">= 1.7.0",
     "underscore": ">= 1.6.0",
