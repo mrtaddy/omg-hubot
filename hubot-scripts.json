@@ -1,11 +1,7 @@
 [
   "shipit.coffee",
   "jenkins-notifier.coffee",
-  "newrelic.coffee",
-  "travis.coffee",
   "ruby.coffee",
-  "airbrake.coffee",
-  "aws.coffee",
   "bang-bang.coffee",
-  "http-say.coffee"
+  "http-post-say.coffee"
  ]
