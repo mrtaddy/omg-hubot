@@ -33,7 +33,7 @@ class MessageBuilder
     @json["build_url"]
 
   step: ->
-    if @json["status_message"] == ""
+    if @json["status_message"] == "Pending"
       "Started"
     else
       @json["status_message"]
