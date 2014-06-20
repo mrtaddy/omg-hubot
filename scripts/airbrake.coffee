@@ -33,6 +33,12 @@ class MessageBuilder
         false
       when /http:\/\/www.noc.west.ntt.co.jp\/deny_url.html/.test(this.file())
         false
+      when /Script error\./.test(this.error_message())
+        false
+      when /Uncaught ReferenceError: twttr is not defined/.test(this.error_message())
+        false
+      when /ReferenceError: Can't find variable: _ga/.test(this.error_message())
+        false
       else
         true
 
@@ -60,8 +66,10 @@ class MessageBuilder
   text: ->
     """
       [#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}
-      #{this.error_message()}\n#{this.file()}:#{this.line_number()}
-      #{this.url()}\n#{this.last_occurred_at()}
+      #{this.error_message()}
+      #{this.file()}:#{this.line_number()}
+      #{this.url()}
+      #{this.last_occurred_at()}
     """
 
 
