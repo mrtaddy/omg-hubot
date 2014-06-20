@@ -58,7 +58,11 @@ class MessageBuilder
     @json["error"]["last_occurred_at"]
 
   text: ->
-    "[#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}\n#{this.error_message()}\n#{this.file()}:#{this.line_number()}\n#{this.url()}\n#{this.last_occurred_at()}"
+    """
+      [#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}
+      #{this.error_message()}\n#{this.file()}:#{this.line_number()}
+      #{this.url()}\n#{this.last_occurred_at()}
+    """
 
 
 querystring = require('querystring')

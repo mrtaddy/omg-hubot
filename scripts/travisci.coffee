@@ -36,13 +36,21 @@ class MessageBuilder
     @json["build_url"]
 
   step: ->
-    if @json["status_message"] == "Pending"
-      "Build Started"
-    else
-      "Build #{@json["status_message"]}"
+    switch @json["status_message"]
+      when "Pending"
+        "✍ Build started"
+      when "Passed", "Fixed"
+        "☀ Build #{@json["status_message"].toLowerCase()}"
+      when "Broken", "Still Failing"
+        "☂ Build #{@json["status_message"].toLowerCase()}"
+      else
+        "☢ Unknown build status"
 
   text: ->
-    "#{this.step()} \##{this.number()} (#{this.commit()}) of #{this.repository()} by #{this.author_name()} \n#{this.build_url()}"
+    """
+      #{this.step()} \##{this.number()} (#{this.commit()}) of #{this.repository()} by #{this.author_name()}
+      #{this.build_url()}
+    """
 
 querystring = require('querystring')
 
