@@ -29,17 +29,20 @@ class MessageBuilder
   author_name: ->
     @json["author_name"]
 
+  commit: ->
+    @json["commit"].substr(0, 7)
+
   build_url: ->
     @json["build_url"]
 
   step: ->
     if @json["status_message"] == "Pending"
-      "Started"
+      "Build Started"
     else
-      @json["status_message"]
+      "Build #{@json["status_message"]}"
 
   text: ->
-    "#{this.repository()} - \##{this.number()} #{this.step()} by #{this.author_name()} (#{this.build_url()})"
+    "#{this.step()} \##{this.number()} (#{this.commit()}) of #{this.repository()} by #{this.author_name()} \n#{this.build_url()}"
 
 querystring = require('querystring')
 
