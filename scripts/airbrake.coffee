@@ -16,73 +16,52 @@
 #
 # Author:
 #   <github username of the original script author>
-class MessageBuilder
-  constructor: (@json) ->
-
-  sendable: ->
-    switch true
-      when /ReferenceError: omg is not defined/.test(this.error_message())
-        false
-      when /ReferenceError: Can't find variable: omg/.test(this.error_message())
-        false
-      when /Uncaught ReferenceError: omg is not defined/.test(this.error_message())
-        false
-      when /ReferenceError: Can't find variable: \$/.test(this.error_message())
-        false
-      when /Uncaught ReferenceError: \$ is not defined/.test(this.error_message())
-        false
-      when /http:\/\/www.noc.west.ntt.co.jp\/deny_url.html/.test(this.file())
-        false
-      when /Script error\./.test(this.error_message())
-        false
-      when /Uncaught ReferenceError: twttr is not defined/.test(this.error_message())
-        false
-      when /ReferenceError: Can't find variable: _ga/.test(this.error_message())
-        false
-      else
-        true
-
-  project_name: ->
-    @json["error"]["project"]["name"]
-
-  error_message: ->
-    @json["error"]["error_message"]
-
-  error_class: ->
-    @json["error"]["error_class"]
-
-  file: ->
-    @json["error"]["file"]
-
-  line_number: ->
-    @json["error"]["line_number"]
-
-  url: ->
-    "https://#{process.env.HUBOT_AIRBRAKE_SUBDOMAIN}.airbrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
-
-  last_occurred_at: ->
-    @json["error"]["last_occurred_at"]
-
-  text: ->
-    """
-      [#{this.project_name()}] New alert for #{this.project_name()}: #{this.error_class()}
-      #{this.error_message()}
-      #{this.file()}:#{this.line_number()}
-      #{this.url()}
-      #{this.last_occurred_at()}
-    """
-
-
 querystring = require('querystring')
 
+class MessageBuilder
+  constructor: (req) ->
+    @query = querystring.parse(req._parsedUrl.query)
+    @json = req.body
+
+  room = ->
+    @query.room || ""
+
+  project_name = ->
+    @json["error"]["project"]["name"]
+
+  error_id = ->
+    @json["error"]["id"]
+
+  error_message = ->
+    @json["error"]["error_message"]
+
+  error_class = ->
+    @json["error"]["error_class"]
+
+  file = ->
+    "#{@json["error"]["file"]}:#{@json["error"]["line_number"]}"
+
+  url = ->
+    "https://#{process.env.HUBOT_AIRBRAKE_SUBDOMAIN}.airbrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
+
+  last_occurred_at = ->
+    @json["error"]["last_occurred_at"]
+
+  payload: ->
+    message:
+      room: room.call(@)
+    content:
+      pretext: "[#{project_name.call(@)}] #{url.call(@)}|\##{error_id.call(@)} New alert for #{project_name.call(@)}: #{error_class.call(@)}"
+      text: error_message.call(@)
+      color: "danger"
+      fallback: ""
+      fields: [
+        {title: "File", value: file.call(@)}
+        {title: "Last occurred at", value: last_occurred_at.call(@)}
+      ]
+
 module.exports = (robot) ->
-  robot.router.post "/hubot/airbrake", (req, res) ->
-    query = querystring.parse(req._parsedUrl.query)
-
-    user = {}
-    user.room = query.room if query.room
-    user.type = query.type if query.type
-
-    message = new MessageBuilder(req.body)
-    robot.send user, message.text() if message.sendable()
-    res.end ""
+  robot.router.post "/#{robot.name}/airbrake", (req, res) ->
+    message = new MessageBuilder(req)
+    robot.emit 'slack-attachment', message.payload()
+    res.end "Airbrake webhook done."
