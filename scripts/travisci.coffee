@@ -76,7 +76,7 @@ class MessageBuilder
 
 
 module.exports = (robot) ->
-  robot.router.post "/hubot/travisci", (req, res) ->
+  robot.router.post "/#{robot.name}/travisci", (req, res) ->
     message = new MessageBuilder req
     robot.emit 'slack-attachment', message.payload()
     res.end "Travis-CI webhook done."
