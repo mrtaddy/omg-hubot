@@ -1,4 +1,8 @@
 language: node_js
+install:
+  - echo "node version $(node -v) running."
+script:
+  - echo "node version $(node -v) running."
 deploy:
   provider: heroku
   api_key:
