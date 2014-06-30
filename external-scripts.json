@@ -7,5 +7,6 @@
   "hubot-google-transliterate",
   "hubot-hotpepper",
   "hubot-weather-ja",
-  "hubot-worldcup"
+  "hubot-worldcup",
+  "hubot-classnamer"
 ]
