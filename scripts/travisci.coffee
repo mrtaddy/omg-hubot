@@ -51,7 +51,7 @@ class MessageBuilder
       when "Passed", "Fixed","Broken", "Still Failing"
         "Build #{@json["status_message"].toLowerCase()}"
       else
-        "Unknown build status"
+        @json["status_message"]
 
   color = ->
     switch @json["status_message"]
