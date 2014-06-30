@@ -48,7 +48,7 @@ class MessageBuilder
     switch @json["status_message"]
       when "Pending"
         "Build started"
-      when "Passed", "Fixed","Broken", "Still Failing"
+      when "Passed", "Fixed","Broken", "Still Failing", "Errored"
         "Build #{@json["status_message"].toLowerCase()}"
       else
         @json["status_message"]
@@ -57,7 +57,7 @@ class MessageBuilder
     switch @json["status_message"]
       when "Passed", "Fixed"
         "good"
-      when "Broken", "Still Failing"
+      when "Broken", "Still Failing", "Errored"
         "danger"
       else
         "#E3E4E6"
