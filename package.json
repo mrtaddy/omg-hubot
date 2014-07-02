@@ -20,6 +20,9 @@
     "type": "git",
     "url": "https://github.com/github/hubot.git"
   },
+  "scripts": {
+    "lint": "coffeelint -f coffeelint.json *.json scripts/*.coffee"
+  },
   "dependencies": {
     "aws2js": ">= 0.8.2",
     "cron ": ">= 0.8.0",
@@ -45,5 +48,8 @@
   "engines": {
     "node": ">= 0.8.x",
     "npm": ">= 1.1.x"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.5.2"
   }
 }

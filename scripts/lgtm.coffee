@@ -18,4 +18,4 @@ module.exports = (robot) ->
             data = JSON.parse(body)
             msg.send data.actualImageUrl
           catch _err
-           msg.send "Ran into an error parsing JSON :("
+            msg.send "Ran into an error parsing JSON :("

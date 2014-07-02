@@ -55,17 +55,17 @@ class MessageBuilder
     word.charAt(0).toUpperCase() + word.slice 1
 
   payload: ->
-      message:
-        room: room.call(@)
-      content:
-        pretext: story.call(@)
-        text: project_name.call(@)
-        color: color.call(@)
-        fallback: ""
-        fields: [
-          {title: "State", value: capitalize.call(@, state.call(@)), short: true}
-          {title: "Owners", value: capitalize.call(@, owners.call(@)), short: true}
-        ]
+    message:
+      room: room.call(@)
+    content:
+      pretext: story.call(@)
+      text: project_name.call(@)
+      color: color.call(@)
+      fallback: ""
+      fields: [
+        {title: "State", value: capitalize.call(@, state.call(@)), short: true}
+        {title: "Owners", value: capitalize.call(@, owners.call(@)), short: true}
+      ]
 
 
 module.exports = (robot) ->

@@ -66,13 +66,13 @@ class MessageBuilder
     "#{step.call(@)} #{build_url.call(@)}|\##{number.call(@)} (#{compare_url.call(@)}|#{commit.call(@)}) of #{repository.call(@)} by #{author_name.call(@)}"
 
   payload: ->
-      message:
-        room: room.call(@)
-      content:
-        text: text.call(@)
-        color: color.call(@)
-        fallback: text.call(@)
-        pretext: ""
+    message:
+      room: room.call(@)
+    content:
+      text: text.call(@)
+      color: color.call(@)
+      fallback: text.call(@)
+      pretext: ""
 
 
 module.exports = (robot) ->
