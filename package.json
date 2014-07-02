@@ -43,7 +43,8 @@
     "moment": ">= 1.7.0",
     "underscore": ">= 1.6.0",
     "xml2js": ">= 0.4.3",
-    "hubot-classnamer": "1syo/hubot-classnamer"
+    "hubot-classnamer": "1syo/hubot-classnamer",
+    "hubot-airbrake-notification": "1syo/hubot-airbrake-notification"
   },
   "engines": {
     "node": ">= 0.8.x",
