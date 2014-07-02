@@ -1,5 +1,7 @@
 # Hubot
 
+[![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
 
 This version is designed to be deployed on [Heroku][heroku]. This README was generated for you by hubot to help get you started. Definitely update and improve to talk about your own instance, how to use and deploy, what functionality he has, etc!
@@ -139,7 +141,7 @@ UI.
     % heroku config:set HUBOT_CAMPFIRE_TOKEN="..."
 
 Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42` 
+you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42`
 and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
 
     % heroku config:set HUBOT_CAMPFIRE_ROOMS="42,1024"
@@ -155,3 +157,8 @@ Add the subdomain hubot should connect to. If you web URL looks like
 
 You may want to get comfortable with `heroku logs` and `heroku restart`
 if you're having issues.
+
+[travis-url]: https://travis-ci.org/mrtaddy/omg-hubot
+[travis-image]: https://travis-ci.org/mrtaddy/omg-hubot.svg?branch=master
+[daviddm-url]: https://david-dm.org/mrtaddy/omg-hubot.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/mrtaddy/omg-hubot
