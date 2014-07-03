@@ -8,5 +8,6 @@
   "hubot-hotpepper",
   "hubot-weather-ja",
   "hubot-worldcup",
-  "hubot-classnamer"
+  "hubot-classnamer",
+  "hubot-airbrake-notification"
 ]
