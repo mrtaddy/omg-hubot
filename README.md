@@ -159,6 +159,6 @@ You may want to get comfortable with `heroku logs` and `heroku restart`
 if you're having issues.
 
 [travis-url]: https://travis-ci.org/mrtaddy/omg-hubot
-[travis-image]: https://travis-ci.org/mrtaddy/omg-hubot.svg?branch=master
+[travis-image]: http://img.shields.io/travis/mrtaddy/omg-hubot/master.svg?style=flat
 [daviddm-url]: https://david-dm.org/mrtaddy/omg-hubot.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/mrtaddy/omg-hubot
+[daviddm-image]: http://img.shields.io/david/mrtaddy/omg-hubot.svg?style=flat
