@@ -1,6 +1,6 @@
 # Hubot
 
-[![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+[![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
 
