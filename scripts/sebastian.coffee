@@ -35,10 +35,6 @@ module.exports = (robot) ->
     robot.send {room: '#general'}, '朝会です'
   ).start()
 
-  new cronJob('0 30 10 * * 4', () ->
-    robot.send {room: '#general'}, 'コードレビューです'
-  ).start()
-
   new cronJob('0 30 10 * * 5', () ->
     robot.send {room: '#general'}, 'エンジニア週次です'
   ).start()
