@@ -5,7 +5,7 @@
 #   "underscore": ">= 1.6.0",
 #
 # Configuration:
-#   SEO_MEMBERS
+#   SEO_ENGINEERS
 #
 # Commands:
 #   hubot seo [message] - post the message to all SEO team members
@@ -13,7 +13,7 @@
 
 _ = require 'underscore'
 
-members = process.env.SEO_MEMBERS?.split(/\s/) || []
+members = process.env.SEO_ENGINEERS?.split(/\s/) || []
 mentions = ->
   ((_.shuffle members).map (name) -> "@#{name}").join(' ')
 
