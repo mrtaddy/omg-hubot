@@ -10,5 +10,6 @@
   "hubot-worldcup",
   "hubot-classnamer",
   "hubot-airbrake-notification",
+  "hubot-travisci-notification",
   "hubot-lets-party"
 ]
