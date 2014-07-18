@@ -31,7 +31,6 @@ module.exports = (robot) ->
       {url: "http://tabelog.com/tokyo/A1315/A131501/13125061/", name: "銭場精肉店"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13117263/", name: "肉寿司 大井町店"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13057393/", name: "いさ美寿司"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13141388/", name: "晩杯屋 大井町店"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13045985/", name: "豚骨醤油 蕾"}
     ]
 
