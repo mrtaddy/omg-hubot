@@ -18,6 +18,7 @@
 #   <github username of the original script author>
 
 cronJob = require('cron').CronJob
+_ = require 'underscore'
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
@@ -34,11 +35,7 @@ module.exports = (robot) ->
       {url: "http://tabelog.com/tokyo/A1315/A131501/13045985/", name: "豚骨醤油 蕾"}
     ]
 
-    for i in [(shops.length-1)..0] by -1
-      p=(Math.random()*(i+1))|0
-      [shops[p],shops[i]]=[shops[i],shops[p]]
-    shop = shops[0]
-
+    shop = (_.shuffle shops)[0]
     robot.send {room: '#general'}, "お昼です。今日は#{shop.name}(#{shop.url})です。"
   ).start()
 
