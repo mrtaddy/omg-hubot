@@ -1,0 +1,15 @@
+shops:
+  - name: 和彩料理やまなか
+    url:  http://tabelog.com/tokyo/A1315/A131501/13083224/
+  - name: トラットリア ヨシダ
+    url:  http://tabelog.com/tokyo/A1315/A131501/13003382/
+  - name: 臚雷亭（ローライテイ）
+    url:  http://tabelog.com/tokyo/A1315/A131501/13113876/
+  - name: 銭場精肉店
+    url:  http://tabelog.com/tokyo/A1315/A131501/13125061/
+  - name: 肉寿司 大井町店
+    url:  http://tabelog.com/tokyo/A1315/A131501/13117263/
+  - name: いさ美寿司
+    url:  http://tabelog.com/tokyo/A1315/A131501/13057393/
+  - name: 豚骨醤油 蕾
+    url:  http://tabelog.com/tokyo/A1315/A131501/13045985/
