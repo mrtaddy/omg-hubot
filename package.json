@@ -43,6 +43,7 @@
     "hubot-weather-ja": "0.0.1",
     "hubot-worldcup": "^0.2.1",
     "jsdom": ">= 0.10.5",
+    "js-yaml": ">= 3.1.0",
     "moment": ">= 1.7.0",
     "sudden-death": "~0.1.0",
     "underscore": ">= 1.6.0",

@@ -3,6 +3,8 @@
 #
 cronJob = require('cron').CronJob
 _ = require 'underscore'
+yaml = require 'js-yaml'
+fs = require 'fs'
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
@@ -11,15 +13,7 @@ module.exports = (robot) ->
   ).start()
 
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
-    shops = [
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13003382/", name: "トラットリア ヨシダ"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13113876/", name: "臚雷亭（ローライテイ）"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13125061/", name: "銭場精肉店"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13117263/", name: "肉寿司 大井町店"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13057393/", name: "いさ美寿司"},
-      {url: "http://tabelog.com/tokyo/A1315/A131501/13045985/", name: "豚骨醤油 蕾"}
-    ]
-
+    shops = yaml.safeLoad(fs.readFileSync('shops.yaml'))
     shop = (_.shuffle shops)[0]
     robot.send {room: '#general'}, "お昼です。今日は#{shop.name}(#{shop.url})です。"
   ).start()
