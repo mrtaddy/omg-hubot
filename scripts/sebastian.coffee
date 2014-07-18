@@ -1,23 +1,8 @@
 # Description
 #   <description of the scripts functionality>
 #
-# Dependencies:
-#   "<module name>": "<module version>"
-#
-# Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
-#
-# Commands:
-#   hubot <trigger> - <what the respond trigger does>
-#   <trigger> - <what the hear trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
-#
-# Author:
-#   <github username of the original script author>
-
 cronJob = require('cron').CronJob
+_ = require 'underscore'
 
 module.exports = (robot) ->
   # *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
@@ -26,9 +11,16 @@ module.exports = (robot) ->
   ).start()
 
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
-    robot.http('http://damp-meadow-3338.herokuapp.com/').get() (err, res, body) ->
-      unless err
-        robot.send {room: '#general'}, "お昼です。今日は#{body}です。"
+    shops = [
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13113876/", name: "臚雷亭（ローライテイ）"},
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13125061/", name: "銭場精肉店"},
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13117263/", name: "肉寿司 大井町店"},
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13057393/", name: "いさ美寿司"},
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13045985/", name: "豚骨醤油 蕾"}
+    ]
+
+    shop = (_.shuffle shops)[0]
+    robot.send {room: '#general'}, "お昼です。今日は#{shop.name}(#{shop.url})です。"
   ).start()
 
   new cronJob('0 15 10 * * 1,2,3,4,5', () ->
