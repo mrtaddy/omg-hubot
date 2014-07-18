@@ -12,6 +12,7 @@ module.exports = (robot) ->
 
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
     shops = [
+      {url: "http://tabelog.com/tokyo/A1315/A131501/13003382/", name: "トラットリア ヨシダ"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13113876/", name: "臚雷亭（ローライテイ）"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13125061/", name: "銭場精肉店"},
       {url: "http://tabelog.com/tokyo/A1315/A131501/13117263/", name: "肉寿司 大井町店"},
