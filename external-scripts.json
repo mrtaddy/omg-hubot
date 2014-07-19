@@ -10,5 +10,6 @@
   "hubot-classnamer",
   "hubot-airbrake-notification",
   "hubot-travisci-notification",
+  "hubot-pivotaltracker-notification",
   "hubot-lets-party"
 ]
