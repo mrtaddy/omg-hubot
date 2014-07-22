@@ -30,6 +30,7 @@
     "hubot": ">= 2.6.0 < 3.0.0",
     "hubot-airbrake-notification": "1syo/hubot-airbrake-notification",
     "hubot-travisci-notification": "1syo/hubot-travisci-notification",
+    "hubot-pivotaltracker-notification": "1syo/hubot-pivotaltracker-notification",
     "hubot-classnamer": "1syo/hubot-classnamer",
     "hubot-google-transliterate": "^0.1.0",
     "hubot-hotpepper": "^0.1.4",
