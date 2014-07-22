@@ -15,7 +15,7 @@ module.exports = (robot) ->
   new cronJob('0 0 13 * * 1,2,3,4,5', () ->
     shops = yaml.safeLoad(fs.readFileSync('shops.yaml'))['shops']
     shop = (_.shuffle shops)[0]
-    robot.send {room: '#general'}, "お昼です。今日は#{shop.name}(#{shop.url})です。"
+    robot.send {room: '#general'}, "お昼です。今日は#{shop.name}( #{shop.url} )です。"
   ).start()
 
   new cronJob('0 15 10 * * 1,2,3,4,5', () ->
