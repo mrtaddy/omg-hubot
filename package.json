@@ -48,7 +48,8 @@
     "moment": ">= 1.7.0",
     "sudden-death": "~0.1.0",
     "underscore": ">= 1.6.0",
-    "xml2js": ">= 0.4.3"
+    "xml2js": ">= 0.4.3",
+    "raw-body": "*"
   },
   "engines": {
     "node": ">= 0.8.x",
