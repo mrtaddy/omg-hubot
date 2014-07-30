@@ -6,8 +6,8 @@
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]
-Deserializer = require '../node_modules/xmlrpc/lib/deserializer'
-Serializer = require '../node_modules/xmlrpc/lib/serializer'
+Deserializer = require 'xmlrpc/lib/deserializer'
+Serializer = require 'xmlrpc/lib/serializer'
 _ = require 'underscore'
 
 class Postman
