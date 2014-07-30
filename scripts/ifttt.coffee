@@ -33,11 +33,11 @@ module.exports = (robot) ->
       res.end body
 
     failure = (value) ->
-      xml = struct: {
-        member: { name: "faultCode", value: { int: value } }
-        member: { name: "faultString", value: { string: "Request was not successful." } }
+      data = {
+        "faultCode": value,
+        "faultString": "Request was not successful."
       }
-      body = Serializer.serializeFault(xml)
+      body = Serializer.serializeFault(data)
       res.writeHead 404, { 'Content-Type': 'text/xml','Content-Length': body.length }
       res.end body
 
@@ -51,7 +51,7 @@ module.exports = (robot) ->
         when "mt.supportedMethods"
           success("metaWeblog.getRecentPosts")
         when "metaWeblog.getRecentPosts"
-          success({array: {data: ""}})
+          success([])
         when "metaWeblog.newPost"
           postman = new Postman(params, robot)
           postman.deliver()
