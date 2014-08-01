@@ -45,3 +45,6 @@ module.exports = (robot) ->
 
   robot.hear /(math|マス|マスよ)\s*[!！]*$/i, (msg) ->
     desmas msg, 'mathematics'
+
+  robot.hear /〼[\s!！]*$/i, (msg) ->
+    desmas msg, '升'
