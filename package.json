@@ -28,7 +28,6 @@
     "cron ": ">= 0.8.0",
     "gitio": ">= 1.0.1",
     "hubot": ">= 2.6.0 < 3.0.0",
-    "hubot-airbrake-notification": "1syo/hubot-airbrake-notification",
     "hubot-travisci-notification": "1syo/hubot-travisci-notification",
     "hubot-pivotaltracker-notification": "1syo/hubot-pivotaltracker-notification",
     "hubot-classnamer": "1syo/hubot-classnamer",
