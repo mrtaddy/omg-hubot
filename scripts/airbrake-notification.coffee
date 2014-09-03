@@ -39,6 +39,9 @@ class Base
   subject: ->
     "[Airbrake] New alert for #{@json["error"]["project"]["name"]}: #{@json["error"]["error_class"]} (#{@json["error"]["id"]})"
 
+  error_id: ->
+    @json["error"]["id"]
+
   error_message: ->
     @json["error"]["error_message"]
 
@@ -47,6 +50,12 @@ class Base
 
   last_occurred_at: ->
     @json["error"]["last_occurred_at"]
+
+  environment: ->
+    @json["error"]["environment"]
+
+  times_occurred: ->
+    @json["error"]["times_occurred"]
 
   project_name: ->
     @json["error"]["project"]["name"]
@@ -71,17 +80,17 @@ class Base
 
 class Slack extends Base
   pretext: ->
-    "[Airbrake] New alert for #{@project_name()} at #{@url()}|#{@last_occurred_at()}"
+    "[Airbrake] New alert for #{@project_name()} (#{@environment()}) - #{@times_occurred()} occurrences"
 
   fields: ->
     results = [{title: @error_message()}]
-    results.concat(_.map @backtraces(), (backtrace) -> { value: backtrace.replace(/\[[A-Z_]+\]\//,'') })
+    results.concat(_.map @backtraces(), (backtrace) -> { value: " #{backtrace.replace(/\[[A-Z_]+\]\//,'')}" })
 
   text: ->
-    if ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'].indexOf(@request_method()) >= 0
-      "#{@request_method()} #{@request_url()}"
-    else
-      ""
+    """
+    #{@url()}|##{@error_id()}
+    [#{@request_method()}] #{@request_url()}
+    """
 
   payload: ->
     message:
