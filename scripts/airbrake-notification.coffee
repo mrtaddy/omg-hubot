@@ -36,9 +36,6 @@ class Base
   url: ->
     "https://#{HUBOT_AIRBRAKE_SUBDOMAIN}.airbrake.io/projects/#{@json["error"]["project"]["id"]}/groups/#{@json["error"]["id"]}"
 
-  subject: ->
-    "[Airbrake] New alert for #{@json["error"]["project"]["name"]}: #{@json["error"]["error_class"]} (#{@json["error"]["id"]})"
-
   error_id: ->
     @json["error"]["id"]
 
@@ -60,37 +57,25 @@ class Base
   project_name: ->
     @json["error"]["project"]["name"]
 
-  request_method: ->
-    @json["error"]["last_notice"]["request_method"]
-
   request_url: ->
     @json["error"]["last_notice"]["request_url"]
 
   backtraces: ->
     @json["error"]["last_notice"]["backtrace"].slice(0, 3)
 
-  message: ->
-    """
-    #{@subject()}
-    » #{@text()}
-    » #{@file()}
-    » #{@url()}
-    » #{@last_occurred_at()}
-    """
 
 class Slack extends Base
   pretext: ->
-    "[Airbrake] New alert for #{@project_name()} (#{@environment()}) - #{@times_occurred()} occurrences"
-
+    "[Airbrake] New alert for #{@project_name()} (#{@environment()}) - #{@times_occurred()} occurrences #{@url()}|##{@error_id()}"
   fields: ->
     results = [{title: @error_message()}]
-    results.concat(_.map @backtraces(), (backtrace) -> { value: " #{backtrace.replace(/\[[A-Z_]+\]\//,'')}" })
+    results.concat(_.map @backtraces(), (backtrace) -> { value: "» #{backtrace.replace(/\[[A-Z_]+\]\//,'')}" })
 
   text: ->
-    """
-    #{@url()}|##{@error_id()}
-    [#{@request_method()}] #{@request_url()}
-    """
+    if @request_url()
+      "Errors on #{@request_url()}"
+    else
+      ""
 
   payload: ->
     message:
@@ -99,7 +84,7 @@ class Slack extends Base
       pretext: @pretext()
       text: @text()
       color: "danger"
-      fallback: @message()
+      fallback: ""
       fields: @fields()
 
   deliver: ->
