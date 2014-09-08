@@ -9,5 +9,6 @@
   "hubot-classnamer",
   "hubot-travisci-notification",
   "hubot-pivotaltracker-notification",
-  "hubot-lets-party"
+  "hubot-lets-party",
+  "hubot-jenkins-notifier"
 ]
