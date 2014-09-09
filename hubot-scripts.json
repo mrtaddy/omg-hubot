@@ -1,6 +1,5 @@
 [
   "shipit.coffee",
-  "jenkins-notifier.coffee",
   "ruby.coffee",
   "bang-bang.coffee",
   "jenkins.coffee",
