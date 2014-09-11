@@ -8,5 +8,8 @@
   "hubot-weather-ja",
   "hubot-classnamer",
   "hubot-lets-party",
-  "hubot-jenkins-notifier"
+  "hubot-jenkins-notifier",
+  "hubot-airbrake-notifier",
+  "hubot-heroku-deploy-notifier",
+  "hubot-pivotaltracker-notifier"
 ]
