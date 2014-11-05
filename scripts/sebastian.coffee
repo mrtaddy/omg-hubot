@@ -28,9 +28,9 @@ module.exports = (robot) ->
 
   # For SEO Renewal project
   seo_project_hangout_url = process.env.SEO_PROJECT_HANGOUT_URL
-  new cronJob('0 10 10 * * 1,2,3,4,5', () ->
-    robot.send {room: '#seo'}, "SEOチーム朝会(10:15〜)です #{seo_project_hangout_url}"
+  new cronJob('0 55 9 * * 1,2,3,4,5', () ->
+    robot.send {room: '#seo'}, "SEOチーム朝会(10:00〜)です #{seo_project_hangout_url}"
   ).start()
-  new cronJob('0 55 17 * * 1,2,3,4,5', () ->
-    robot.send {room: '#seo'}, "SEOチーム夕会(18:00〜)です #{seo_project_hangout_url}"
+  new cronJob('0 25 17 * * 1,2,3,4,5', () ->
+    robot.send {room: '#seo'}, "SEOチーム夕会(17:30〜)です #{seo_project_hangout_url}"
   ).start()
