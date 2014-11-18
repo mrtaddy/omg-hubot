@@ -14,11 +14,11 @@ module.exports = (robot) ->
     robot.send {room: '#general'}, "お昼です。今日は#{shop.name}( #{shop.url} )です。"
   ).start()
 
-  # For SEO Renewal project
-  seo_project_hangout_url = process.env.SEO_PROJECT_HANGOUT_URL
-  new cronJob('0 15 10 * * 1,2,3,4,5', () ->
-    robot.send {room: '#backoffice'}, "@channel backoffice チーム朝会です #{seo_project_hangout_url}"
+  # For Backoffice project
+  backoffice_hangout_url = process.env.BACKOFFICE_HANGOUT_URL
+  new cronJob('0 00 10 * * 1,2,3,4,5', () ->
+    robot.send {room: '#backoffice'}, "@channel backoffice チーム朝会です #{backoffice_hangout_url}"
   ).start()
-  new cronJob('0 00 18 * * 1,2,3,4,5', () ->
-    robot.send {room: '#backoffice'}, "@channel backoffice チーム夕会です #{seo_project_hangout_url}"
+  new cronJob('0 45 17 * * 1,2,3,4,5', () ->
+    robot.send {room: '#backoffice'}, "@channel backoffice チーム夕会です #{backoffice_hangout_url}"
   ).start()
