@@ -37,7 +37,7 @@
     "hubot-sushiyuki": "0.0.8",
     "hubot-tantanmen": "^0.1.1",
     "hubot-thecat": ">= 1.0.1",
-    "hubot-travisci-notifier": "^1.0.1",
+     "hubot-lets-party": "^0.1.0",
     "hubot-weather-ja": "0.0.1",
     "js-yaml": ">= 3.1.0",
     "jsdom": ">= 0.10.5",
