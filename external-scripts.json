@@ -6,8 +6,5 @@
   "hubot-google-transliterate",
   "hubot-hotpepper",
   "hubot-weather-ja",
-  "hubot-classnamer",
-  "hubot-jenkins-notifier",
-  "hubot-travisci-notifier",
-  "hubot-pivotaltracker-notifier"
+  "hubot-classnamer"
 ]
