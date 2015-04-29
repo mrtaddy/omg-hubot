@@ -43,12 +43,9 @@
     "hubot-thecat": ">= 1.0.1",
     "hubot-lets-party": "^0.1.0",
     "cron ": ">= 0.8.0",
-    "gitio": ">= 1.0.1",
     "js-yaml": ">= 3.1.0",
-    "jsdom": ">= 0.10.5",
-    "moment": ">= 1.7.0",
-    "sudden-death": "~0.1.0",
-    "underscore": ">= 1.6.0"
+    "underscore": ">= 1.6.0",
+    "sudden-death": "~0.1.0"
   },
   "engines": {
     "node": ">= 0.12.x",

@@ -1,7 +1,4 @@
 [
-  "shipit.coffee",
-  "ruby.coffee",
   "bang-bang.coffee",
-  "jenkins.coffee",
   "http-post-say.coffee"
  ]
