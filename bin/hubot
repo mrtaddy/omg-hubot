@@ -3,5 +3,11 @@
 npm install
 export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 
-exec node_modules/.bin/hubot "$@"
+export HUBOT_HEROKU_KEEPALIVE_URL=${HEROKU_URL}
+export HUBOT_HEROKU_KEEPALIVE_INTERVAL=30
+export HUBOT_LETS_PARTY_BE_QUIET=true
+export HUBOT_LETS_PARTY_ROOM=random
+export TZ=Asia/Tokyo
+
+exec node_modules/.bin/hubot -a slack "$@"
 

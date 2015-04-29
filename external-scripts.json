@@ -1,11 +1,17 @@
 [
+  "hubot-diagnostics",
+  "hubot-help",
+  "hubot-heroku-keepalive",
+  "hubot-google-images",
+  "hubot-google-translate",
+  "hubot-pugme",
+  "hubot-maps",
+  "hubot-redis-brain",
+  "hubot-rules",
+  "hubot-youtube",
   "hubot-thecat",
   "hubot-tantanmen",
   "hubot-sushiyuki",
   "hubot-phonetic-alphabet",
-  "hubot-google-transliterate",
-  "hubot-hotpepper",
-  "hubot-weather-ja",
-  "hubot-classnamer",
   "hubot-lets-party"
 ]

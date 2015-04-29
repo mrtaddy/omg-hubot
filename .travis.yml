@@ -1,12 +1,5 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "0.12"
 script:
   - npm run lint
-deploy:
-  provider: heroku
-  api_key:
-    secure: Yboq9g8bxVOtZMdAynaQ1tkaA4I1kEFgIkVsN+4xYnTd6la2+DGy1ubCuoJOIDEIj5ydpGaiB1E1ChNa8g7hBGSgS0wQL7jJHUyT7hcXTIlkC38dpJgluDsYIVYr7LxH64GV/sAZXWgVo1ELIPchriCc8SU83rSr/X1wp9sRDHM=
-  app: omg-hubot
-  on:
-    repo: mrtaddy/omg-hubot
