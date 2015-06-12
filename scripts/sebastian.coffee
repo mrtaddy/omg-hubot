@@ -25,9 +25,15 @@ module.exports = (robot) ->
 
   # For EC project
   ec_hangout_url = process.env.EC_HANGOUT_URL
+  new cronJob('0 04 10 * * 1,2,3,4,5', () ->
+    robot.send {room: 'ec'}, "@channel ec チーム朝会まであと10分です。今日の作業予定を書きましょう！"
+  ).start()
   new cronJob('0 14 10 * * 1,2,3,4,5', () ->
     robot.send {room: 'ec'}, "@channel ec チーム朝会です(10:15 〜) #{ec_hangout_url}"
   ).start()
-  new cronJob('0 59 17 * * 1,2,3,4,5', () ->
-    robot.send {room: 'ec'}, "@channel ec チーム夕会です(18:00 〜) #{ec_hangout_url}"
+  new cronJob('0 39 17 * * 1,2,3,4,5', () ->
+    robot.send {room: 'ec'}, "@channel ec チーム夕会まであと10分です。今日の作業進捗を書きましょう！"
+  ).start()
+  new cronJob('0 49 17 * * 1,2,3,4,5', () ->
+    robot.send {room: 'ec'}, "@channel ec チーム夕会です(17:50 〜) #{ec_hangout_url}"
   ).start()
