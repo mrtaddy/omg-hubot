@@ -29,6 +29,8 @@ shops:
     url: http://tabelog.com/tokyo/A1314/A131402/13004559/
   - name: 三田製麺所 三田本店
     url: http://tabelog.com/tokyo/A1314/A131402/13056611/
+  - name: やっとこ 三田店
+    url: http://tabelog.com/tokyo/A1314/A131402/13158832/
   - name: 越後屋吉之助（【旧店名】芝五丁目のひもの屋）
     url: http://tabelog.com/tokyo/A1314/A131402/13019406/
   - name: とんかついなば和幸
@@ -37,6 +39,10 @@ shops:
     url: http://tabelog.com/tokyo/A1314/A131402/13169631/
   - name: えびす
     url: http://tabelog.com/tokyo/A1314/A131402/13088249/
+  - name: 季節料理 三味
+    url: http://tabelog.com/tokyo/A1314/A131402/13038402/
+  - name: はま多”
+    url: http://tabelog.com/tokyo/A1314/A131402/13020521/
   - name: 二代目魚屋町
     url: http://tabelog.com/tokyo/A1314/A131402/13060104/
   - name: 瀬戸内水軍
