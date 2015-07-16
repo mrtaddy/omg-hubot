@@ -13,8 +13,6 @@ shops:
     url: http://tabelog.com/tokyo/A1314/A131402/13121025/
   - name: モン・トレゾール 東京 （mon tresor tokyo）
     url: http://tabelog.com/tokyo/A1314/A131402/13166509/
-  - name: 飾りじゃないのよカレーは
-    url: http://tabelog.com/tokyo/A1314/A131402/13137458/
   - name: カレーハウス林
     url: http://tabelog.com/tokyo/A1314/A131402/13168013/
   - name: ムンバイ
@@ -55,8 +53,6 @@ shops:
     url: http://tabelog.com/tokyo/A1314/A131402/13140450/
   - name: しだ風
     url: http://tabelog.com/tokyo/A1314/A131402/13025372/
-  - name: ぴゅあ
-    url: http://tabelog.com/tokyo/A1314/A131402/13164808/
   - name: 田町ミート
     url: http://tabelog.com/tokyo/A1314/A131402/13166846/
   - name: Takas Kitchen（タカズキッチン）
@@ -67,3 +63,5 @@ shops:
     url: http://tabelog.com/tokyo/A1314/A131402/13045256/
   - name: 居酒屋系ランチ
     url: http://tabelog.com/tokyo/A1314/A131402/13026856/
+  - name: ホルモンまさる
+    url: http://tabelog.com/tokyo/A1314/A131402/13150755/
