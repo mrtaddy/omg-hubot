@@ -3,13 +3,14 @@ node_js:
   - '0.12'
 script:
   - npm run lint
+env:
+  - secure: "CKwbs8nCLSucHSx7RkPI3RWEy4Bjg97MIzdyXVvnI9C4mKasoV4x/LSna/gEwZ2Scw7IpT6MlOiJrggY0i9yA5JVYfN1ewwiOm9n4MxoQ2gqP8517KVyptA9Uod6XnHcyeb80Qrm8wt5kd4vWaKmRqsLzuZaPTo4bVyg9hr5nIk="
 deploy:
   provider: openshift
-  user:
-    secure: k4iQ0kfSSbotw14r8KmI8rfWKt1tlY4888XqFFvNoy+dmta8yEgGUZFRUPfLnAJEbGuiGzxMjzkDg42NVy1sGgB2HIBGqs8Ij1O01AsOI00GKUNBaHNgdORIw57KX3LzD8tlf2UlhiIJxZutWZONbR3b13KFDFpaKJH9DRoBd/M=
-  password:
-    secure: iaTc93nzOnO5cu0IYXMgodOeFZ3VWvbLnUl1ZPR8ArlIcVcJkfPxcgjDb47ZehHyl1WQLX7Vq0EDh7+1u1Xtuez5oyV62AuBGdJ5602kDETXbnY+h+pwaUL0vXixsAuqRbEX+MeFi1tnCGhwp5HE+1wgtevhFCa4LVRo+jj+M3o=
+  user: $OPENSHIFT_USER
+  password: $OPENSHIFT_PASSWORD
   app: hubot
+  domain: $OPENSHIFT_DOMAIN
   on:
     repo: mrtaddy/omg-hubot
 sudo: false
