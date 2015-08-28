@@ -22,7 +22,7 @@
   },
   "scripts": {
     "lint": "coffeelint -f coffeelint.json *.json scripts/*.coffee",
-    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HEROKU_URL=$OPENSHIFT_APP_DNS REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOST:$REDISCLOUD_PORT bin/hubot"
+    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HEROKU_URL=https://$OPENSHIFT_APP_DNS REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot"
   },
   "dependencies": {
     "hubot": "^2.12.0",
