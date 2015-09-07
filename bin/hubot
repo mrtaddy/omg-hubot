@@ -6,6 +6,8 @@ export PATH="node_modules/.bin:node_modules/hubot/node_modules/.bin:$PATH"
 export HUBOT_HEROKU_KEEPALIVE_URL=${HEROKU_URL}
 export HUBOT_HEROKU_KEEPALIVE_INTERVAL=30
 export HUBOT_LETS_PARTY_BE_QUIET=true
+export HUBOT_HEROKU_SLEEP_TIME=0:00
+export HUBOT_HEROKU_SLEEP_TIME=8:00
 export HUBOT_LETS_PARTY_ROOM=random
 export TZ=Asia/Tokyo
 
