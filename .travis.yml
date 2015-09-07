@@ -3,14 +3,4 @@ node_js:
   - '0.12'
 script:
   - npm run lint
-env:
-  - secure: "CKwbs8nCLSucHSx7RkPI3RWEy4Bjg97MIzdyXVvnI9C4mKasoV4x/LSna/gEwZ2Scw7IpT6MlOiJrggY0i9yA5JVYfN1ewwiOm9n4MxoQ2gqP8517KVyptA9Uod6XnHcyeb80Qrm8wt5kd4vWaKmRqsLzuZaPTo4bVyg9hr5nIk="
-deploy:
-  provider: openshift
-  user: $OPENSHIFT_USER
-  password: $OPENSHIFT_PASSWORD
-  app: hubot
-  domain: $OPENSHIFT_DOMAIN
-  on:
-    repo: mrtaddy/omg-hubot
 sudo: false
