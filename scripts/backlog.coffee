@@ -28,8 +28,17 @@ module.exports = (robot) ->
         url += "#comment-#{body.content.comment.id}"
 
       message = "*Backlog #{label}*\n"
+
       message += "[#{body.project.projectKey}-#{body.content.key_id}] - "
-      message += "#{body.content.summary} _by #{body.createdUser.name}_\n>>> "
+      message += "#{body.content.summary} _by #{body.createdUser.name}_\n"
+
+      if body.notifications?.length
+        message += "お知らせ: "
+        names = (n.user.name for n in body.notifications)
+        message += names.join(", ")
+        message += "\n"
+
+      message += ">>> "
       if body.content.comment?.content?
         message += "#{body.content.comment.content}\n"
       message += "#{url}"
